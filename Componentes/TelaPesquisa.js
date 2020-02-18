@@ -5,14 +5,16 @@ import { Component } from 'react';
 import ButtonPesquisa from './ButtonPesquisa.js';
 import TelaPerfil from './TelaPerfil.js';
 import BarraPesquisa from './ButtonPesquisa.js';
-
+import TelaFiltros from './TelaFiltros.js';
 
 
 
 export default class TelaPesquisa extends Component {
     state = {
         lugares:'',
-    } ;
+        filter:false,
+        date:'a',
+    };
     fetchTrips(text){
         if(text == "a") return ["a","b","c"];
         else if ( text=="")return [];
@@ -40,15 +42,18 @@ export default class TelaPesquisa extends Component {
           ];
         const {pesquisa} = this.state;
         return(
-            <View style={{alignItems:'center', backgroundColor:'white', flex:1}}>
+            <View style={{alignItems:'center', backgroundColor:'white', flex:1}}> 
+                <TelaFiltros Visible={this.state.filter} onClose={(date) => this.setState({filter:false,date:date})}/>
                 <View style={{flexDirection:'row', width:'100%'}}>
                     <SearchBar containerStyle={{width:'90%', backgroundColor:'white', borderColor:'white'}} inputContainerStyle={{backgroundColor:'white', borderWidth:0}} inputStyle={{borderWidth:0}}onChangeText={this.pesquisar} value={pesquisa}/>  
-                    <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:30, width:30, alignItems:'center'}}>
+                    <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:30, width:30, alignItems:'center'}} onPress={()=> this.setState({filter:true})}>
                         <Image style={styles.imgs} source={require('/home/yuri/mais_um/assets/menu.png')}/>
                     </TouchableOpacity>
+                    
                 </View>
+                <Button title={'teste'} onPress={console.log(this.state.date)}/>
                 <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')}/>}/>
-            </View>
+            </View> 
         );
     };
     
