@@ -1,16 +1,50 @@
 import React , {useState, Component}from 'react';
-import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, TouchableOpacity, Image, Modal} from 'react-native';
-import Picker from './Picker.js';
+import { StyleSheet, Text, View,TextInput, Picker,Button,ScrollView, FlatList, TouchableOpacity, Image, Modal} from 'react-native';
+import PickerDate from './Picker.js';
 import { Switch } from 'react-native-paper';
+
 export default class TelaFiltros extends Component{
     state={
+        isDate:false,
         dateBegin:'',
         dateEnd:'',
-        isDate:false,
+
         isPrice:false,
+        priceBegin:'',
+        priceEnd:'',
+
+        isCompany:false,
+        company:'',
+
+        isBusType:false,
+        bus:'',
+
+        isBalada:false,
+        isPraias:false,
+        isNatureza:false,
+        isLagos:false,
+        isMontanhas:false,
     }
     printDate(){
         console.log(this.state.date);
+    }
+    MontaRetorno(){
+        return {
+            "isDate":this.state.isDate,
+            "dateBegin":this.state.dateBegin,
+            "dateEnd":this.state.dateEnd,
+            "isPrice":this.state.isPrice,
+            "priceBegin":this.state.priceBegin,
+            "priceEnd":this.state.priceEnd,
+            "isCompany":this.state.isCompany,
+            "company":this.state.company,
+            "isBusType":this.state.isBusType,
+            "isBalada":this.state.isBalada,
+            "isPraias":this.state.isPraias,
+            "isNatureza":this.state.isNatureza,
+            "isLagos":this.state.isLagos,
+            "isMontanhas":this.state.isMontanhas
+        };
     }
     render(){
         return(
@@ -21,7 +55,7 @@ export default class TelaFiltros extends Component{
                 transparent={false}
                 visible={this.props.Visible}
                 onRequestClose={() => {
-                    this.props.onClose(this.state.dateBegin);
+                    this.props.onClose(this.MontaRetorno());
                 }}>
                         <View style={{width:'96%',
                                     flexDirection:'row',
@@ -30,44 +64,91 @@ export default class TelaFiltros extends Component{
                                     marginTop:10,
                                     marginHorizontal:'2%',
                                     alignItems:'center',}}>
-                            <Image source={require('/home/yuri/mais_um/assets/down.png')}/>
-                            <TouchableOpacity onPress={() => this.props.onClose(this.state.date)}>
+                            <Image style={{width:10, height:10}} source={require('/home/yuri/mais_um/assets/down.png')}/>
+                            <TouchableOpacity onPress={() => {this.props.onClose(this.MontaRetorno());}}>
                                 <Image source={require('/home/yuri/mais_um/assets/close.png')}/>
                             </TouchableOpacity>
                         </View>  
-                        <Text style={{fontSize:16}}>Filtros</Text> 
+                        <Text style={{fontSize:20, marginHorizontal:'2%', marginTop:15}}>Filtros</Text> 
                         <View style={styles.containersComponentes}>
                             <Text style={{alignSelf:'center', fontSize:14}}>Data da viagem entre:</Text>
-                            <Picker  style={{marginTop:15, alignSelf:'center'}} width={80} height={30}  date={this.state.date} setDate={(date) => this.setState({date:date})}/>
+                            <PickerDate  style={{marginTop:15, alignSelf:'center'}} width={80} height={30}  date={this.state.dateBegin} setDate={(dateBegin) => this.setState({dateBegin:dateBegin})}/>
                             <Text style={{alignSelf:'center'}}>e</Text>
-                            <Picker  style={{marginTop:15, alignSelf:'center'}} width={80} height={30}  date={this.state.date} setDate={(date) => this.setState({date:date})}/>
-                            <Switch  style={{alignSelf:'center'}} value={this.state.isDate} onValueChange={() => {this.setState({isDate:!this.state.isDate});
+                            <PickerDate  style={{marginTop:15, alignSelf:'center'}} width={80} height={30}  date={this.state.dateEnd} setDate={(dateEnd) => this.setState({dateEnd:dateEnd})}/>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isDate} onValueChange={() => {this.setState({isDate:true});
                                                                             console.log(this.state.isDate);} }/>
 
                         </View>
                         <View style={styles.containersComponentes}>
                             <Text style={{fontSize:14}}>Valor da viagem entre:</Text>
-                            <TextInput style={styles.inputs}/>
+                            <TextInput style={styles.inputs} onChangeText={(text) => {this.setState({priceBegin:text}); 
+                                                                                      console.log(this.state.priceBegin);  }}/>
                             <Text style={{fontSize:14}}>e</Text>
-                            <TextInput style={styles.inputs}/>
-                            <Switch  style={{alignSelf:'center'}} value={this.state.isDate} onValueChange={() => {this.setState({isDate:!this.state.isPrice});
+                            <TextInput style={styles.inputs} onChangeText={(text) => {this.setState({priceEnd:text}); 
+                                                                                      console.log(this.state.priceEnd);}}/>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isPrice} onValueChange={() => {this.setState({isPrice:!this.state.isPrice});
                                                                             console.log(this.state.isDate);} }/>
                         </View>
                         <View style={styles.containersComponentes}>
-
+                            <Text style={{fontSize:14}}>Empresa:</Text>
+                            <Picker
+                                selectedValue={this.state.company}
+                                style={{height: 30, width: 250}}
+                                onValueChange={(itemValue, itemIndex) =>{
+                                        this.setState({company: itemValue});
+                                        console.log(this.state.company);
+                                    }
+                                }>
+                                <Picker.Item label="Java" value="java" />
+                                <Picker.Item label="JavaScript" value="js" />
+                                </Picker>
+                                <Switch  style={{alignSelf:'center'}} value={this.state.isCompany} onValueChange={() => {this.setState({isCompany:!this.state.isCompany});
+                                                                            console.log(this.state.isCompany);} }/>
                         </View>
                         <View style={styles.containersComponentes}>
-
+                        <Text style={{fontSize:14}}>Tipo de onibus:</Text>
+                            <Picker
+                                selectedValue={this.state.bus}
+                                style={{height: 30, width: 250}}
+                                onValueChange={(itemValue, itemIndex) =>{
+                                        this.setState({bus: itemValue});
+                                        console.log(this.state.bus);
+                                    }
+                                }>
+                                <Picker.Item label="busão" value="bus" />
+                                <Picker.Item label="Onibus" value="oni" />
+                                </Picker>
+                                <Switch  style={{alignSelf:'center'}} value={this.state.isBusType} onValueChange={() => {this.setState({isBusType:!this.state.isBusType});
+                                                                            console.log(this.state.isBusType);} }/>
                         </View>
-                        <Text>Lugares próximos</Text>
+                        <Text style={{fontSize:20, marginTop:35, marginHorizontal:'2%'}}>Lugares próximos</Text>
+                        
                         <View style={styles.containersComponentes}>
-
+                            <Text style={{fontSize:14 }}>Baladas</Text>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isBalada} onValueChange={() => {this.setState({isBalada:!this.state.isBalada});
+                                                                            console.log(this.state.isBalada);} }/>
+                        </View>
+                        
+                        <View style={styles.containersComponentes}>
+                        <Text style={{fontSize:14 }}>Praias</Text>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isPraias} onValueChange={() => {this.setState({isPraias:!this.state.isPraias});
+                                                                            console.log(this.state.isPraias);} }/>
+                        </View>
+                        
+                        <View style={styles.containersComponentes}>
+                        <Text style={{fontSize:14 }}>Natureza</Text>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isNatureza} onValueChange={() => {this.setState({isNatureza:!this.state.isNatureza});
+                                                                            console.log(this.state.isNatureza);} }/>
                         </View>
                         <View style={styles.containersComponentes}>
-
+                        <Text style={{fontSize:14 }}>Lagos</Text>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isLagos} onValueChange={() => {this.setState({isLagos:!this.state.isLagos});
+                                                                            console.log(this.state.isLagos);} }/>
                         </View>
                         <View style={styles.containersComponentes}>
-
+                        <Text style={{fontSize:14 }}>Montanhas</Text>
+                            <Switch  style={{alignSelf:'center'}} value={this.state.isMontanhas} onValueChange={() => {this.setState({isMontanhas:!this.state.isMontanhas});
+                                                                            console.log(this.state.isMontanhas);} }/>
                         </View>
                 </Modal>
             </View>
@@ -87,7 +168,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         backgroundColor:'white',
         justifyContent:'space-between',
-        marginTop:30,
+        marginTop:35,
         marginHorizontal:'2%',
         alignItems:'center',
     },

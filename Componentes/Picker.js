@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import  React, {Component } from 'react';
 
 
-export default class Picker extends Component{
+export default class PickerDate extends Component{
 
     state={
         date:this.props.date,
