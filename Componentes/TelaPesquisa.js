@@ -31,6 +31,10 @@ export default class TelaPesquisa extends Component {
     IrParaOutra(){
       
     }
+    setarDate(data){
+        this.setState({filter:false, date:data});
+        console.log(this.state.date);
+    }
 
     render(){
         const dataSource = [
@@ -43,15 +47,14 @@ export default class TelaPesquisa extends Component {
         const {pesquisa} = this.state;
         return(
             <View style={{alignItems:'center', backgroundColor:'white', flex:1}}> 
-                <TelaFiltros Visible={this.state.filter} onClose={(date) => this.setState({filter:false,date:date})}/>
+                <TelaFiltros Visible={this.state.filter} onClose={(date) => this.setarDate(date)}/>
                 <View style={{flexDirection:'row', width:'100%'}}>
-                    <SearchBar containerStyle={{width:'90%', backgroundColor:'white', borderColor:'white'}} inputContainerStyle={{backgroundColor:'white', borderWidth:0}} inputStyle={{borderWidth:0}}onChangeText={this.pesquisar} value={pesquisa}/>  
-                    <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:30, width:30, alignItems:'center'}} onPress={()=> this.setState({filter:true})}>
-                        <Image style={styles.imgs} source={require('/home/yuri/mais_um/assets/menu.png')}/>
+                    <SearchBar containerStyle={{width:'90%',height:50, backgroundColor:'white', borderColor:'white'}} inputContainerStyle={{backgroundColor:'white', borderWidth:0}} inputStyle={{borderWidth:0}}onChangeText={this.pesquisar} value={pesquisa}/>  
+                    <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:50, width:'10%', alignItems:'center',alignContent:'center'}} onPress={()=> this.setState({filter:true})}>
+                        <Image style={{alignSelf:'center'}} source={require('/home/yuri/mais_um/assets/down.png')}/>
                     </TouchableOpacity>
                     
                 </View>
-                <Button title={'teste'} onPress={console.log(this.state.date)}/>
                 <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')}/>}/>
             </View> 
         );
@@ -61,11 +64,8 @@ export default class TelaPesquisa extends Component {
 
 const styles = StyleSheet.create({ 
     imgs:{
-        height:'100%',
-        width:'7%',
-        borderColor:'black',
-        borderBottomWidth:1,
-        borderTopWidth:1,
+        height:'60%',
+        width:'60%',
     }
 }
 );
