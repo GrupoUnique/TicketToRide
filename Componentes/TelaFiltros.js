@@ -28,6 +28,7 @@ export default class TelaFiltros extends Component{
     printDate(){
         console.log(this.state.date);
     }
+    
     MontaRetorno(){
         return {
             "isDate":this.state.isDate,
