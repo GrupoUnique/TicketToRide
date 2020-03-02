@@ -18,10 +18,11 @@ export default class PickerDate extends Component{
                         mode="date"
                         placeholder="  /  /    "
                         format="DD-MM-YYYY"
-                        minDate="19-02-2020"
+                        minDate={this.props.minDate}
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
                         showIcon={false}
+                        disabled={this.props.disabled}
                         onDateChange={(date) => {
                             this.setState({date:date});
                             this.props.setDate(this.state.date);

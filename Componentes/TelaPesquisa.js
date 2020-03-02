@@ -22,6 +22,7 @@ export default class TelaPesquisa extends Component {
     pesquisar = pesquisa => {
         this.setState({pesquisa});
         this.state.lugares = this.fetchTrips(pesquisa);
+        console.log(this.state.date);
     };
 
     IrParaOutra(){
@@ -49,7 +50,6 @@ export default class TelaPesquisa extends Component {
                     <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:50, width:'10%', alignItems:'center',alignContent:'center'}} onPress={()=> this.setState({filter:true})}>
                         <Image style={{marginTop:'40%'}} source={require('/home/yuri/mais_um/assets/down.png')}/>
                     </TouchableOpacity>
-                    
                 </View>
                 <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')}/>}/>
             </View> 
