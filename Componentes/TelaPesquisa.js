@@ -7,8 +7,6 @@ import TelaPerfil from './TelaPerfil.js';
 import BarraPesquisa from './ButtonPesquisa.js';
 import TelaFiltros from './TelaFiltros.js';
 
-
-
 export default class TelaPesquisa extends Component {
     state = {
         lugares:'',
@@ -17,15 +15,13 @@ export default class TelaPesquisa extends Component {
     };
     fetchTrips(text){
         if(text == "a") return ["a","b","c"];
-        else if ( text=="")return [];
+        else if ( text=="")return [];  
         else return ["a"];
     }
 
     pesquisar = pesquisa => {
         this.setState({pesquisa});
-        console.log(this.state.pesquisa);
         this.state.lugares = this.fetchTrips(pesquisa);
-        console.log(this.state.lugares);
     };
 
     IrParaOutra(){
@@ -47,11 +43,11 @@ export default class TelaPesquisa extends Component {
         const {pesquisa} = this.state;
         return(
             <View style={{alignItems:'center', backgroundColor:'white', flex:1}}> 
-                <TelaFiltros Visible={this.state.filter} onClose={(date) => this.setarDate(date)}/>
+                <TelaFiltros Visible={this.state.filter} onClose={(date) => {this.setarDate(date)}}/>
                 <View style={{flexDirection:'row', width:'100%'}}>
                     <SearchBar containerStyle={{width:'90%',height:50, backgroundColor:'white', borderColor:'white'}} inputContainerStyle={{backgroundColor:'white', borderWidth:0}} inputStyle={{borderWidth:0}}onChangeText={this.pesquisar} value={pesquisa}/>  
                     <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:50, width:'10%', alignItems:'center',alignContent:'center'}} onPress={()=> this.setState({filter:true})}>
-                        <Image style={{alignSelf:'center'}} source={require('/home/yuri/mais_um/assets/down.png')}/>
+                        <Image style={{marginTop:'40%'}} source={require('/home/yuri/mais_um/assets/down.png')}/>
                     </TouchableOpacity>
                     
                 </View>

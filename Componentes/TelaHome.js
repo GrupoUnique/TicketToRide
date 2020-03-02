@@ -3,7 +3,6 @@ import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, Touchabl
 import ContainerButtons from './ContainerButtons.js';
 import ContainerViagens from './ContainerViagens.js';
 import { Component } from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 var imgPaths = FetchImages(1);
 //var imgs = RequireImages(imgPaths);

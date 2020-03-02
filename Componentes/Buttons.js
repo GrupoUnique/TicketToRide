@@ -1,26 +1,28 @@
-import React , {useState}from 'react';
+import React , {useState, Component}from 'react';
 import { StyleSheet, Text, View,TextInput, TouchableOpacity,ScrollView, FlatList, Touchable,Image} from 'react-native';
 
 
- const Buttons = props => {
-    return(
-        <View style={{borderRadius:10,
-                     width:props.width,
-                     height:props.height,
-                     backgroundColor:props.color,
-                     flexDirection:'row',
-                     justifyContent:'space-between',
-                     }}>
-                         
-            <TouchableOpacity style={styles.botao}>  
-            <Image
-                style={{width: props.ImgWidth, height: props.ImgHeight}}
-                source={props.imagem}
-            />
-            <Text style={{fontSize:props.fonte, color:props.fontColor}}>{props.text}</Text>
-            </TouchableOpacity>
-        </View>
-    );
+ export default class Buttons extends Component{
+    render(){
+        return(
+            <View style={{borderRadius:10,
+                         width:this.props.width,
+                         height:this.props.height,
+                         backgroundColor:this.props.color,
+                         flexDirection:'row',
+                         justifyContent:'space-between',
+                         }}>
+                             
+                <TouchableOpacity style={styles.botao}>  
+                <Image
+                    style={{width: this.props.ImgWidth, height: this.props.ImgHeight}}
+                    source={this.props.imagem}
+                />
+                <Text style={{fontSize:this.props.fonte, color:this.props.fontColor}}>{this.props.text}</Text>
+                </TouchableOpacity>
+            </View>
+        );
+    }
 };
 
 const styles = StyleSheet.create({
@@ -33,5 +35,3 @@ const styles = StyleSheet.create({
         shadowRadius:10,
     },
 });
-
-export default Buttons;
