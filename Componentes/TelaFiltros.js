@@ -1,5 +1,5 @@
 import React , {useState, Component}from 'react';
-import { StyleSheet, Text, View,TextInput, Picker,Button,ScrollView, FlatList, TouchableOpacity, Image, Modal, Alert} from 'react-native';
+import { StyleSheet, Text, View,TextInput, Picker,TouchableOpacity, Image, Modal, Alert} from 'react-native';
 import PickerDate from './Picker.js';
 import { Switch } from 'react-native-paper';
 
