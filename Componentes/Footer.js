@@ -1,20 +1,22 @@
-import React , {useState}from 'react';
-import { StyleSheet, Text, View, Button,ScrollView, TouchableOpacity,FlatList, Touchable} from 'react-native';
-import Buttons from './Buttons.js'; 
+import React, { Component } from 'react';
+
 import { createAppContainer } from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import TelaHome from './TelaHome.js';
 import TelaPesquisa from './TelaPesquisa.js';
 import TelaPerfil from './TelaPerfil.js';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-
-
+import TelaLogin from './TelaLogin.js';
+import TelaCadastro from './Registro.js';
+import { createStackNavigator, Header } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 Icon.loadFont();
+
+const Stack = createStackNavigator();
 
 
 const MainNavigation = createMaterialBottomTabNavigator({
-        Home:{
+    Home:{
             screen:TelaHome,
             navigationOptions: () => ({
                 tabBarIcon: ({ focused }) => (
@@ -59,7 +61,31 @@ const MainNavigation = createMaterialBottomTabNavigator({
             },
 );
 
+const Bottom = createAppContainer(MainNavigation);
 
-const Nav = createAppContainer(MainNavigation);
+class Teste extends Component{
+    render(){
+        return(
+            <Bottom independent={true}>
+             <MainNavigation/>
+             </Bottom> 
+        );
+    }
+}
 
-export default createAppContainer(MainNavigation);
+function MyStack() {
+    return (
+        <NavigationContainer initialRouteName="Login" > 
+            <Stack.Navigator screenOptions={{headerShown: false}}>
+                <Stack.Screen name="Login" component={TelaLogin} />
+                <Stack.Screen name="Cadastro" component={TelaCadastro} />
+                <Stack.Screen name="Home" component={Teste} />
+            </Stack.Navigator>
+      </NavigationContainer>
+    );
+}
+  
+
+
+
+export default MyStack;

@@ -7,13 +7,12 @@ import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, Touchabl
 /* FlatList precisa que quando vc va declarar oq vc quer dentro  */
 //Dar uma olhada na funcao filter dos arrays
 import Nav from './Componentes/Footer.js';
-import TelaHome from './Componentes/TelaHome.js';
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import Login from './Componentes/TelaLogin.js';
 export default function App() {
   return (
     <View style={styles.container}>
        <Nav/>
-    </View>
+    </View>  
   );
 }
 
