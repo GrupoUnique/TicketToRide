@@ -1,10 +1,8 @@
 import React , {useState}from 'react';
-import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, Touchable, Image,TouchableOpacity,} from 'react-native';
+import { StyleSheet, View, FlatList, Image,TouchableOpacity,} from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { Component } from 'react';
 import ButtonPesquisa from './ButtonPesquisa.js';
-import TelaPerfil from './TelaPerfil.js';
-import BarraPesquisa from './ButtonPesquisa.js';
 import TelaFiltros from './TelaFiltros.js';
 
 export default class TelaPesquisa extends Component {

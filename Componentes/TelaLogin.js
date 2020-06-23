@@ -1,20 +1,20 @@
-import React , {Component}from 'react';
+import React , {useState}from 'react';
 import { StyleSheet, Text, View,TextInput, Image,TouchableOpacity,} from 'react-native';
 
-import {Actions} from 'react-native-router-flux';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 
 export default function TelaLogin ({navigation}){
+
+    const [user, setUser] = useState('');
+    const [senha, setSenha] = useState('');
+            
         
         return(
             <View style={styles.containerPrincipal}>
                 <View style={styles.container}>
                     <Image style={styles.imgs} source={require('/home/yuri/mais_um/assets/logo.png')}/>
-                    <TextInput style={styles.input} placeholder={'Usuario'} onSubmitEditing={() => this.passwordInput.focus()}/>
-                    <TextInput style={styles.input} placeholder={'Senha'} secureTextEntry ref={(input) => this.passwordInput = input}/>
-                    <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate("Home")}>
+                    <TextInput style={styles.input} placeholder={'Usuario'} onSubmitEditing={() => this.passwordInput.focus()} onChangeText={(texto) => setUser(texto)}/>
+                    <TextInput style={styles.input} placeholder={'Senha'} secureTextEntry ref={(input) => this.passwordInput = input} onChangeText={(texto) => setSenha(texto)} onSubmitEditing={TryToLog(user, senha, navigation)}/>
+                    <TouchableOpacity style={styles.botao} onPress={TryToLog(user, senha, navigation)}>
                         <Text style={styles.textos}>Entrar</Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
@@ -24,6 +24,10 @@ export default function TelaLogin ({navigation}){
             </View>
         );
      }
+function TryToLog(usuario,senha, navigation){
+    if(usuario.toLowerCase() ==="adm" && senha.toLowerCase() ==="123") navigation.navigate("Home");
+    else console.log("Usuario ou senha incorretos");
+}
 
 const styles = StyleSheet.create({ 
         containerPrincipal:{

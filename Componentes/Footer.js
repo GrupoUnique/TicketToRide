@@ -7,7 +7,7 @@ import TelaPesquisa from './TelaPesquisa.js';
 import TelaPerfil from './TelaPerfil.js';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import TelaLogin from './TelaLogin.js';
-import TelaCadastro from './Registro.js';
+import TelaCadastro from './TelaCadastro.js';
 import { createStackNavigator, Header } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 Icon.loadFont();
@@ -38,7 +38,7 @@ const MainNavigation = createMaterialBottomTabNavigator({
                 
             }),
         },
-        Perfil:{
+        Perfil:{ 
             screen:TelaPerfil,
             navigationOptions: () => ({
                 tabBarIcon: ({ focused }) => (
