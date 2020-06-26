@@ -29,12 +29,12 @@ export default function TelaCadastro ({navigation}){
                 <Text style={styles.textos}>Endereço</Text>
                 <TextInput style={styles.input} keyboardType={"number-pad"} placeholder={'Cep (sem traços)'} ref={(input) => this.CepInput = input} onChangeText={(texto) => setCep(texto)}/>
                 <Picker style={styles.input} onValueChange={(itemValue, itemIndex) => setEstado(itemValue)}>
-                    <Picker.Item label="Sp" value="sp" />
-                    <Picker.Item label="Rj" value="rj" />
+                    <Picker.Item label="SP" value="sp" />
+                    <Picker.Item label="RJ" value="rj" />
                 </Picker>
                 <Picker style={styles.input} onValueChange={(itemValue, itemIndex) =>setCidade(itemValue)}>
-                    <Picker.Item label="São paulo" value="saoPaulo" />
-                    <Picker.Item label="Rio negro e são limões" value="gente" />
+                    <Picker.Item label="São Paulo" value="saoPaulo" />
+                    <Picker.Item label="Rio negro e Solimões" value="gente" />
                 </Picker>
                 <TextInput style={styles.input} placeholder={'Endereço (Rua, avenida, etc)'} ref={(input) => this.EnderecoInput = input} onChangeText={(texto) => setLogradouro(texto)}/>
                 <TextInput style={styles.input} keyboardType={"number-pad"} placeholder={'N°'} ref={(input) => this.NumInput = input} onChangeText={(texto) => setNumero(texto)}/>

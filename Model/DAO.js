@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 const User = require('./User.js');
-const data = require('/home/yuri/mais_um/Docs/data.json');
+const data = require('./Docs/data.json');
 mongoose.connect('mongodb+srv://YuriCavalcanti:<'+data.mongo.con.pass+'>@tickettoride-5qlij.gcp.mongodb.net/test?retryWrites=true&w=majority',{useMongoClient:true});
 const db = mongoose.connection;
 const express = require('express');

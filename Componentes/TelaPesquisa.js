@@ -46,7 +46,7 @@ export default class TelaPesquisa extends Component {
                 <View style={{flexDirection:'row', width:'100%'}}>
                     <SearchBar containerStyle={{width:'90%',height:50, backgroundColor:'white', borderColor:'white'}} inputContainerStyle={{backgroundColor:'white', borderWidth:0}} inputStyle={{borderWidth:0}}onChangeText={this.pesquisar} value={pesquisa}/>  
                     <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:50, width:'10%', alignItems:'center',alignContent:'center'}} onPress={()=> this.setState({filter:true})}>
-                        <Image style={{marginTop:'40%'}} source={require('../assets/down.png')}/>
+                        <Image style={{marginTop:'40%'}} source={require('./assets/down.png')}/>
                     </TouchableOpacity>
                 </View>
                 <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('../assets/maldivas.jpeg')}/>}/>

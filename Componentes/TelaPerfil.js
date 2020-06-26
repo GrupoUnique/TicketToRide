@@ -11,7 +11,7 @@ export default class TelaPerfil extends Component{
         return(
             <View style={styles.Container}>
                 <HeaderPerfil/>
-                <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')}/>}/>
+                <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('./assets/maldivas.jpeg')}/>}/>
             </View>
         );
     };

@@ -33,7 +33,7 @@ class TelaHome extends Component{
 function FetchImages(Id){
     return [{
         "Image":{
-            "path":"/home/yuri/mais_um/assets/maldivas.jpeg",
+            "path":"./assets/maldivas.jpeg",
             "title":"maldivas"
         }
     }];

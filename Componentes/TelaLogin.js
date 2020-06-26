@@ -11,7 +11,7 @@ export default function TelaLogin ({navigation}){
         return(
             <View style={styles.containerPrincipal}>
                 <View style={styles.container}>
-                    <Image style={styles.imgs} source={require('../assets/logo.png')}/>
+                    <Image style={styles.imgs} source={require('./assets/logo.png')}/>
                     <TextInput style={styles.input} placeholder={'Usuario'} onSubmitEditing={() => this.passwordInput.focus()} onChangeText={(texto) => setUser(texto)}/>
                     <TextInput style={styles.input} placeholder={'Senha'} secureTextEntry ref={(input) => this.passwordInput = input} onChangeText={(texto) => setSenha(texto)} onSubmitEditing={TryToLog(user, senha, navigation)}/>
                     <TouchableOpacity style={styles.botao} onPress={TryToLog(user, senha, navigation)}>

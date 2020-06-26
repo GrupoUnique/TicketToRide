@@ -6,7 +6,7 @@ export default class HeaderPerfil extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Image source={require('../assets/beiçola.jpg')} style={styles.img}/>
+                <Image source={require('./assets/beiçola.jpg')} style={styles.img}/>
                 <View style={styles.containerText}>
                     <Text>Aula do melhor professor da fatec</Text>                
                     <Text>professor.rogerio@lindo.com</Text>     

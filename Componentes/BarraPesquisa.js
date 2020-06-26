@@ -14,9 +14,9 @@ export default class InputText extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Image style={styles.imgs} source={require('../assets/search.png')}/>
+                <Image style={styles.imgs} source={require('./assets/search.png')}/>
                 <TextInput style={{flex:1}} onChangeText={{valor = text}}/>
-                <Image style={styles.imgs} source={require('../assets/search.png')}/>
+                <Image style={styles.imgs} source={require('./assets/search.png')}/>
             </View>
         );
     }
