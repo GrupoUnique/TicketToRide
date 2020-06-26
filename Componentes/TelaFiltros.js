@@ -93,9 +93,9 @@ export default class TelaFiltros extends Component{
                                     marginTop:10,
                                     marginHorizontal:'2%',
                                     alignItems:'center'}}>
-                            <Image style={{width:10, height:10}} source={require('/home/yuri/mais_um/assets/down.png')}/>
+                            <Image style={{width:10, height:10}} source={require('../assets/down.png')}/>
                             <TouchableOpacity onPress={() => {if(this.validarRetorno())this.props.onClose(this.MontaRetorno());}}>
-                                <Image source={require('/home/yuri/mais_um/assets/close.png')}/>
+                                <Image source={require('../assets/close.png')}/>
                             </TouchableOpacity>
                         </View>  
                         <Text style={{fontSize:20, marginHorizontal:'2%', marginTop:15}}>Filtros</Text> 
