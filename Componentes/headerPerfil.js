@@ -6,10 +6,10 @@ export default class HeaderPerfil extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Image source={require('/home/yuri/mais_um/assets/beiçola.jpg')} style={styles.img}/>
+                <Image source={require('../assets/beiçola.jpg')} style={styles.img}/>
                 <View style={styles.containerText}>
-                    <Text>Informações</Text>                
-                    <Text>Informações</Text>     
+                    <Text>Aula do melhor professor da fatec</Text>                
+                    <Text>professor.rogerio@lindo.com</Text>     
                 </View>
             </View>
         );
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
             borderRadius:10,
         },
         containerText:{
-            alignItems:'center',
+            alignItems:'flex-start',
         },
     }
 ); 

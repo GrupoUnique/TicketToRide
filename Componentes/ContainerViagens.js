@@ -10,11 +10,11 @@ const ContainerViagens = props => {
                 width:props.width,
                 height:props.heigth,
                 margin:props.margin,}}>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')} texto={'Maldivas'}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')} texto={'Maldivas'}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')} texto={'Maldivas'}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')} texto={'Maldivas'}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('/home/yuri/mais_um/assets/maldivas.jpeg')} texto={'Maldivas'}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'}/>
             </ScrollView> 
         </View>
     );

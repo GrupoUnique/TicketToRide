@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
             marginTop:20,
             height:40,
             marginTop:10,
+            paddingLeft:10,
         },
         inputSenha:{
             width:'96%',
