@@ -10,7 +10,7 @@ const ButtonViagem = props =>{
                                       heigth:'80%',
                                         alignItems:"center",
                                         paddingTop:15,
-                                        shadowRadius:2}}>
+                                        shadowRadius:2}} onPress={ () => props.navigator.navigate("Compra")}>
                 <Image source={props.imagem} style={styles.Img}/>
             </TouchableOpacity>
             <Text style={styles.Texto}>{props.texto}</Text>

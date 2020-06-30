@@ -7,7 +7,7 @@ export default class ButtonPesquisa extends Component{
         
         return(
             <View style={{width:'96%', height:180, marginHorizontal:'2%',marginVertical:10}}>
-                <TouchableOpacity style={styles.container}>
+                <TouchableOpacity style={styles.container} onPress={() => this.props.navigator.navigate(this.props.screen)}>
                     <View style={{width:'40%', height:'100%',alignItems:'center'}}> 
                         <Image source={this.props.imagem} style={styles.img}/> 
                         <Text style={styles.textInfo}>Maldivas</Text>

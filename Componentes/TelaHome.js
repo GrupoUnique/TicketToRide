@@ -1,39 +1,38 @@
 import React , {useState}from 'react';
-import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, Touchable} from 'react-native';
+import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, TouchableOpacity} from 'react-native';
 import ContainerButtons from './ContainerButtons.js';
 import ContainerViagens from './ContainerViagens.js';
 import { Component } from 'react';
+import { Modal } from 'react-native-paper';
+import TelaCompra from './TelaCompra';
 
 var imgPaths = FetchImages(1);
 //var imgs = RequireImages(imgPaths);
-class TelaHome extends Component{
-    
-    render(){
+export default function TelaHome ({navigation}){
+    const [visivel, setVisivel] = useState(false);
         return(
             <View style={styles.scroll}>
                 <ScrollView>
                     <Text style={styles.Textos}>Explore</Text> 
-                    <ContainerButtons width={'94%'} height={120} margin={'2%'} top={30}></ContainerButtons>
+                    <ContainerButtons width={'94%'} height={120} margin={'2%'} top={30} navigator={navigation}></ContainerButtons>
                     <Text style={styles.Textos}>Destaques</Text>
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'}></ContainerViagens>
-                    <Text style={styles.Textos}>Promoções</Text>
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'}></ContainerViagens>
+                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
+                    <Text style={styles.Textos} >Promoções</Text>
+                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
                     <Text style={styles.Textos}>Já Visitados</Text>
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'}></ContainerViagens>
+                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
                     <Text style={styles.Textos}>Mais Visitados</Text> 
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'}></ContainerViagens>
+                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
                 </ScrollView>
             </View>
-        );
-    };
-    
+        )
 };
 
 
 function FetchImages(Id){
     return [{
         "Image":{
-            "path":"./assets/maldivas.jpeg",
+            "path":"../assets/maldivas.jpeg",
             "title":"maldivas"
         }
     }];
@@ -67,5 +66,3 @@ const styles = StyleSheet.create({
         borderBottomColor:'#bfbfbf',
     },  
 });
-
-export default TelaHome;

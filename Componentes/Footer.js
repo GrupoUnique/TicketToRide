@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-
-import { createAppContainer } from 'react-navigation';
-import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 import TelaHome from './TelaHome.js';
 import TelaPesquisa from './TelaPesquisa.js';
 import TelaPerfil from './TelaPerfil.js';
@@ -10,76 +7,51 @@ import TelaLogin from './TelaLogin.js';
 import TelaCadastro from './TelaCadastro.js';
 import { createStackNavigator, Header } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import TelaCompra from './TelaCompra.js'
+import TelaQr from './TelaQr.js';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
+
+
 Icon.loadFont();
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
+function Home() {
+    return (
+      <Tab.Navigator initialRouteName="TelaHome" sceneAnimationEnabled={true} tabBarOptions={{activeTintColor: 'black', }}>
+        <Tab.Screen name="TelaHome" component={TelaHome} options={{
+                                                                    tabBarLabel: 'Home',
+                                                                    tabBarIcon: ({ color, size }) => (
+            <Icon name="home" color={color} size={size} /> )
+        }}/>
+        <Tab.Screen name="Pesquisa" component={TelaPesquisa}  options={{
+                                                                    tabBarLabel: 'Pesquisar',
+                                                                    tabBarIcon: ({ color, size }) => (
+            <Icon name="search" color={color} size={size} /> )
+        }}/>
+        <Tab.Screen name="Perfil" component={TelaPerfil} options={{
+                                                                    tabBarLabel: 'Perfil',
+                                                                    tabBarIcon: ({ color, size }) => (
+            <Icon name="user" color={color} size={size} /> )
+        }}/>
+      </Tab.Navigator>
+    );
+  }
 
-const MainNavigation = createMaterialBottomTabNavigator({
-    Home:{
-            screen:TelaHome,
-            navigationOptions: () => ({
-                tabBarIcon: ({ focused }) => (
-                    <Icon name="home" size={20} inactiveColor={'black'} activeColor={'#b3b3b3'}/>
-                ),
-                //tabBarColor:'yellow',
-            }),
-        },
-        Pesquisar:{
-            screen:TelaPesquisa, //props => <TelaPesquisa {...props} texto={'funfou'}/>,   
-            
-            
-            navigationOptions: () => ({
-                tabBarIcon: ({ focused }) => (
-                    <Icon name="search" size={20} inactiveColor={'black'} activeColor={'#b3b3b3'}/> 
-                ),
-                
-               // tabBarColor:'green',
-                
-            }),
-        },
-        Perfil:{ 
-            screen:TelaPerfil,
-            navigationOptions: () => ({
-                tabBarIcon: ({ focused }) => (
-                    <Icon name="user" size={20} inactiveColor={'black'} activeColor={'#b3b3b3'}/> 
-                ),
-               // tabBarColor:'orange',
-            }),
-        },
-    },
-            {
-                    barStyle:{
-                        backgroundColor:'white',
-                        shadowRadius:2,
-                },
-                activeColor: '#b3b3b3',
-                inactiveColor:'black',
-                shifting:true,
-                sceneAnimationEnabled:true,
-                initialRouteName:'Home',
-            },
-);
-
-const Bottom = createAppContainer(MainNavigation);
-
-class Teste extends Component{
-    render(){
-        return(
-            <Bottom independent={true}>
-             <MainNavigation/>
-             </Bottom> 
-        );
-    }
-}
-
+  const Stack = createStackNavigator();
+  
 function MyStack() {
     return (
         <NavigationContainer initialRouteName="Login" > 
             <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen name="Login" component={TelaLogin} />
                 <Stack.Screen name="Cadastro" component={TelaCadastro} />
-                <Stack.Screen name="Home" component={Teste} />
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="HomeTeste" component = {TelaHome}/>
+                <Stack.Screen name="Compra" component={TelaCompra}/>
+                <Stack.Screen name="Qr" component={TelaQr}/>
             </Stack.Navigator>
       </NavigationContainer>
     );

@@ -3,18 +3,14 @@ import { StyleSheet, Text, View,TextInput, Button,ScrollView, FlatList, Touchabl
 import HeaderPerfil from './headerPerfil.js';
 import ButtonPesquisa from './ButtonPesquisa.js';
 
-export default class TelaPerfil extends Component{
-    state={
-        lugares:['a','b','c','d'],
-    };
-    render(){
-        return(
+export default function TelaPerfil ({navigation}) {
+    const [lugares, setLugares] = useState(['a','b','c','d']);
+    return(
             <View style={styles.Container}>
                 <HeaderPerfil/>
-                <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('./assets/maldivas.jpeg')}/>}/>
+                <FlatList style={{backgroundColor:'white'}}data={lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('../assets/maldivas.jpeg')} navigator={navigation} screen={"Qr"}/>}/>
             </View>
-        );
-    };
+        )
 };
 
 const styles = StyleSheet.create({

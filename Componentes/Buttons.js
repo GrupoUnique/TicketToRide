@@ -13,7 +13,7 @@ import { StyleSheet, Text, View,TextInput, TouchableOpacity,ScrollView, FlatList
                          justifyContent:'space-between',
                          }}>
                              
-                <TouchableOpacity style={styles.botao}>  
+                <TouchableOpacity style={styles.botao} onPress={() => this.props.navigator.jumpTo("Pesquisa")}>  
                 <Image
                     style={{width: this.props.ImgWidth, height: this.props.ImgHeight}}
                     source={this.props.imagem}
