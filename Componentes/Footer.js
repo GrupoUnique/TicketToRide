@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TelaHome from './TelaHome.js';
 import TelaPesquisa from './TelaPesquisa.js';
 import TelaPerfil from './TelaPerfil.js';
@@ -9,6 +9,7 @@ import { createStackNavigator, Header } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import TelaCompra from './TelaCompra.js'
 import TelaQr from './TelaQr.js';
+import TelaSplash from './TelaSplash.js';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
@@ -44,8 +45,9 @@ function Home() {
   
 function MyStack() {
     return (
-        <NavigationContainer initialRouteName="Login" > 
+        <NavigationContainer initialRouteName="Splash" > 
             <Stack.Navigator screenOptions={{headerShown: false}}>
+                <Stack.Screen name="Splash" component={TelaSplash} />
                 <Stack.Screen name="Login" component={TelaLogin} />
                 <Stack.Screen name="Cadastro" component={TelaCadastro} />
                 <Stack.Screen name="Home" component={Home} />
