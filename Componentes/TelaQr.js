@@ -7,18 +7,28 @@ export default function TelaQr ({navigation}){
             <Image resizeMode={"stretch"} style={styles.qrCode} source={require('../assets/QrCode.jpg')}/>
             <Text style={styles.textoInform}>Informações de viagem</Text>
             <View style={styles.containerTextos}>
-                <Text style={styles.styleTextos}>Assento: 32</Text>
-                <Text style={styles.styleTextos}>Portão de embarque: 5J</Text>
+                <Text style={styles.styleTextos}>Assento:</Text>
+                <Text style={styles.infos}>31 - Janela</Text>
             </View>
             <View style={styles.containerTextos}>
-                <Text style={styles.styleTextos}>Tempo de viagem: 32 anos</Text>
+                <Text style={styles.styleTextos}>Portão de embarque:</Text>
+                <Text style={styles.infos}>53 - Ala B</Text>
             </View>
             <View style={styles.containerTextos}>
-                <Text style={styles.styleTextos}>Número de paradas: 1340</Text>
+                <Text style={styles.styleTextos}>Partida:</Text>
+                <Text style={styles.infos}>23/12/2021 10h00m</Text>
             </View>
             <View style={styles.containerTextos}>
-                <Text style={styles.styleTextos}>Possui banheiro: Sim</Text>
-                <Text style={styles.styleTextos}>Possui Wi-fi: Sim</Text>
+                <Text style={styles.styleTextos}>Número de paradas:</Text>
+                <Text style={styles.infos}>1340 - 20 minutos</Text>
+            </View>
+            <View style={styles.containerTextos}>
+                <Text style={styles.styleTextos}>Banheiro:</Text>
+                <Text style={styles.infos}>Sim</Text>
+            </View>
+            <View style={styles.containerTextos}>
+                <Text style={styles.styleTextos}>Wi-Fi:</Text>
+                <Text style={styles.infos}>Sim</Text>
             </View>
         </View>
     )
@@ -31,17 +41,18 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     qrCode:{
-        width:'100%',
-        height:'60%',
+        width:'75%',
+        height:'45%',
     },
     containerTextos:{
         flexDirection:'row',
+        alignContent:"flex-start",
         justifyContent:'space-between',
         width:'96%',
     },
     styleTextos:{
         fontSize:18,
-        marginTop:25,
+        marginTop:30,
     },
     textoInform:{
         fontSize:22,
@@ -49,5 +60,11 @@ const styles = StyleSheet.create({
         width:'90%',
         borderBottomWidth:1,
         borderBottomColor:'#bfbfbf',
+        textAlign:"center",
     },  
+    infos:{
+        fontSize: 18,
+        marginTop:30,
+        alignItems: "flex-end",
+    },
 })

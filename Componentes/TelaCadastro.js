@@ -19,10 +19,10 @@ export default function TelaCadastro ({navigation}){
             <ScrollView style={styles.containerPrincipal}> 
                <View style={styles.container}>
                 <Text style={styles.textos}>Dados pessoais</Text>
-                <TextInput style={styles.input} placeholder={'Nome e sobrenome'} onSubmitEditing={() => this.EmailInput.focus()} onChangeText={(texto) => setNome(texto)}/>
+                <TextInput style={styles.input} placeholder={'Nome completo'} onSubmitEditing={() => this.EmailInput.focus()} onChangeText={(texto) => setNome(texto)}/>
                 <TextInput style={styles.input} keyboardType={"email-address"} placeholder={'E-mail'} ref={(input) => this.EmailInput = input} onChangeText={(texto) => setEmail(texto)}/>
-                <TextInput style={styles.input} placeholder={'Senha'} ref={(input) => this.SenhaInput = input} onChangeText={(texto) => setSenha(texto)}/>
-                <TextInput style={styles.input} placeholder={'Confirme sua senha'} ref={(input) => this.ConfirmaInput = input} onChangeText={(texto) => {if(texto === senha) console.log("Igual");}}/>
+                <TextInput style={styles.input} secureTextEntry placeholder={'Senha'} ref={(input) => this.SenhaInput = input} onChangeText={(texto) => setSenha(texto)}/>
+                <TextInput style={styles.input} secureTextEntry placeholder={'Confirme sua senha'} ref={(input) => this.ConfirmaInput = input} onChangeText={(texto) => {if(texto === senha) console.log("Igual");}}/>
                 <TextInput style={styles.input} placeholder={'Data de nascimento'} ref={(input) => this.ConfirmaInput = input} onChangeText={(texto) => {if(texto === senha) console.log("Igual");}}/>
                 <TextInput style={styles.input} keyboardType={"phone-pad"} placeholder={'Numero de telefone'} ref={(input) => this.TelefoneInput = input} onChangeText={(texto) => setTelefone(texto)}/>
                 <TextInput style={styles.input} keyboardType={"number-pad"} placeholder={'Cpf (sem traços)'} ref={(input) => this.CpfInput = input} onChangeText={(texto) => setCpf(texto)}/>

@@ -10,13 +10,15 @@ export default function TelaCompra({navigation}){
                     <Text style={{fontSize:24}}>Empresa</Text>
                     <Image style={styles.imagemEmpresa} source={require('../assets/logoRodoviaria.png')}/>
                 </View>
-                <Text style={styles.textoPropriedades}>Ilhas maldivas</Text>
-                <Text style={styles.textoPropriedades}>Data e hora: 23/12/2020 10:00</Text>
-                <Text style={styles.textoPropriedades}>Tempo de viagem: 4hr</Text>
-                <Text style={styles.textoPropriedades}>Local de embarque: Guarulhos, SP</Text>
-                <Text style={styles.textoPropriedades}>Tipo de onibûs: Executivo</Text>
+                <Text style={styles.textoPropriedades}>Origem: São Paulo                        Destino: Ilhas maldivas</Text>
+                <Text style={styles.textoLegenda}>Partida</Text>
+                <Text style={styles.textoHora}>Data: 23/12/2021                                              Hora: 10:00</Text>
+                <Text style={styles.textoLegenda}>Chegada</Text>
+                <Text style={styles.textoHora}>Data: 23/12/2021                                              Hora: 14:00</Text>
+                <Text style={styles.textoPropriedades}>Local de embarque:                              Rodoviária do Tietê</Text>
+                <Text style={styles.textoPropriedades}>Tipo de onibûs:                                                       Executivo</Text>
                 <View style={styles.containerCompra}>
-                    <Text style={styles.textoValor}>R$ 950,00</Text>
+                    <Text style={styles.textoValor}>R$ 950,00 ($1.00)</Text>
                     <TouchableOpacity style={styles.botao}>
                         <Text style={styles.textoCompra}>Comprar</Text>
                     </TouchableOpacity>
@@ -78,8 +80,21 @@ const styles = StyleSheet.create({
     },
     textoPropriedades:{
         fontSize:14,
-        marginTop:20,
+        marginTop:15,
+        marginBottom: 5,
         marginLeft:16,
-    }  
+    },
+    textoLegenda:{
+        fontSize: 14,
+        marginTop: 15,
+        marginBottom: 0,
+        marginLeft: 16,
+    },
+    textoHora:{
+        fontSize: 14,
+        marginTop: 10,
+        marginBottom: 5,
+        marginLeft: 16,
+    }
 })
 
