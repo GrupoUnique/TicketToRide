@@ -13,7 +13,6 @@ export default class TelaPesquisa extends Component {
     };
     fetchTrips(text){
         if(text == "a") return ["a","b","c"];
-        else if ( text=="")return [];  
         else return ["a"];
     }
 

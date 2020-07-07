@@ -2,7 +2,7 @@ import React , {useState}from 'react';
 import { StyleSheet, Text, View,TextInput, Image,TouchableOpacity,} from 'react-native';
 
 export default function Splash ({navigation}){
-    setTimeout(()=> navigation.navigate("Login"), 5000);
+    setTimeout(()=> navigation.navigate("Login"), 2000);
     return(
         <View style={styles.container}>
             <Image style={styles.imgs} source={require('../assets/logo.png')}/>
