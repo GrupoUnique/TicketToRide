@@ -5,9 +5,8 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function TelaCompra({navigation}){
     return(
             <View style={styles.containerPrincipal}>  
-                <Image style={styles.imagem} source={require('../assets/maldivas.jpeg')}/>
+                <Image style={styles.imagem} source={require('../assets/saopaulo.jpg')}/>
                 <View style={styles.containerEmpresa}>
-                    <Text style={{fontSize:24}}>Empresa</Text>
                     <Image style={styles.imagemEmpresa} source={require('../assets/logoRodoviaria.png')}/>
                 </View>
                 <Text style={styles.textoPropriedades}>Origem: São Paulo                        Destino: Ilhas maldivas</Text>
@@ -17,6 +16,7 @@ export default function TelaCompra({navigation}){
                 <Text style={styles.textoHora}>Data: 23/12/2021                                              Hora: 14:00</Text>
                 <Text style={styles.textoPropriedades}>Local de embarque:                              Rodoviária do Tietê</Text>
                 <Text style={styles.textoPropriedades}>Tipo de onibûs:                                                       Executivo</Text>
+                
                 <View style={styles.containerCompra}>
                     <Text style={styles.textoValor}>R$ 950,00 ($1.00)</Text>
                     <TouchableOpacity style={styles.botao}>
@@ -36,20 +36,19 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
     }, 
     imagem:{
-        height:'40%',
+        // height:'30%',
         width:'100%',
         marginRight:16,
     },
     imagemEmpresa:{
-        height:'100%',
-        width:'40%',
+        width:'49%',
+        // height:'30%',
+        
     },
     containerEmpresa:{
         marginTop:15,
         marginHorizontal:16,
         width:"100%",
-        flexDirection:'row',
-        justifyContent:'space-between',
         alignItems:'center',
     },
     containerCompra:{
@@ -83,18 +82,22 @@ const styles = StyleSheet.create({
         marginTop:15,
         marginBottom: 5,
         marginLeft:16,
+        borderBottomWidth: 1,
+        borderBottomColor: "black"
     },
     textoLegenda:{
-        fontSize: 14,
+        fontSize: 18,
         marginTop: 15,
         marginBottom: 0,
         marginLeft: 16,
+        alignSelf:"center"
     },
     textoHora:{
         fontSize: 14,
         marginTop: 10,
         marginBottom: 5,
         marginLeft: 16,
+        borderBottomWidth: 1
     }
 })
 

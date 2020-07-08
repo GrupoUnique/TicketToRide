@@ -11,10 +11,10 @@ const ContainerViagens = props => {
                 height:props.heigth,
                 margin:props.margin,}}>
                 <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'} navigator={props.navigator}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'} navigator={props.navigator}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'} navigator={props.navigator}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'} navigator={props.navigator}/>
-                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/maldivas.jpeg')} texto={'Maldivas'} navigator={props.navigator}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/saopaulo.jpg')} texto={'São Paulo'} navigator={props.navigator}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/riodejaneiro.jpg')} texto={'Rio de Janeiro'} navigator={props.navigator}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/salvador-ba.jpg')} texto={'Salvador'} navigator={props.navigator}/>
+                <ButtonViagem width={170} heigth={props.heigth - 15} imagem={require('../assets/paraiso.jpg')} texto={'Paraíso'} navigator={props.navigator}/>
             </ScrollView> 
         </View>
     );

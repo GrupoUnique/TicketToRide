@@ -40,15 +40,35 @@ export default class TelaPesquisa extends Component {
           ];
         const {pesquisa} = this.state;
         return(
-            <View style={{alignItems:'center', backgroundColor:'white', flex:1}}> 
-                <TelaFiltros Visible={this.state.filter} onClose={(date) => {this.setarDate(date)}}/>
-                <View style={{flexDirection:'row', width:'100%'}}>
-                    <SearchBar containerStyle={{width:'90%',height:50, backgroundColor:'white', borderColor:'white'}} inputContainerStyle={{backgroundColor:'white', borderWidth:0}} inputStyle={{borderWidth:0}}onChangeText={this.pesquisar} value={pesquisa}/>  
-                    <TouchableOpacity style={{borderTopWidth:1, borderBottomWidth:1, borderColor:'black', height:50, width:'10%', alignItems:'center',alignContent:'center'}} onPress={()=> this.setState({filter:true})}>
-                        <Image style={{marginTop:'40%'}} source={require('../assets/down.png')}/>
+            <View style={styles.main}> 
+                <TelaFiltros
+                    Visible={this.state.filter} 
+                    onClose={(date) => {this.setarDate(date)}}
+                />
+                <View style={styles.barraPesquisar}>
+                    <SearchBar containerStyle={styles.container} 
+                        inputContainerStyle={styles.inputContainer} 
+                        placeholder={"Digite aqui seu destino"}
+                        inputStyle={{borderWidth:0}}
+                        onChangeText={this.pesquisar} 
+                        value={pesquisa}
+                    />  
+                    <TouchableOpacity style={styles.botaoFiltro} 
+                        onPress={()=> this.setState({filter:true})}>
+                        <Image style={styles.img} source={require('../assets/down.png')}/>
                     </TouchableOpacity>
                 </View>
-                <FlatList style={{backgroundColor:'white'}}data={this.state.lugares} renderItem={({item}) => <ButtonPesquisa imagem={require('../assets/maldivas.jpeg')} navigator={this.props.navigation} screen={"Compra"}/>}/>
+                
+                <FlatList style={{backgroundColor:'white'}}
+                    data={this.state.lugares} 
+                    renderItem={({item}) => 
+                        <ButtonPesquisa 
+                            imagem={require('../assets/maldivas.jpeg')} 
+                            navigator={this.props.navigation} 
+                            screen={"Compra"}
+                        />
+                    }
+                />
             </View> 
         );
     };
@@ -56,9 +76,35 @@ export default class TelaPesquisa extends Component {
 };
 
 const styles = StyleSheet.create({ 
+    main:{
+        alignItems:'center', 
+        backgroundColor:'white', 
+        flex:1
+    },
+    barraPesquisar:{
+        flexDirection:'row', 
+        width:'100%'
+    },
     imgs:{
-        height:'60%',
-        width:'60%',
+        marginTop: 45,
+    },
+    container:{
+        width:'90%',
+        height:50, 
+        backgroundColor:'white'
+    },
+    inputContainer:{
+        backgroundColor:'white', 
+        borderWidth:0, 
+        height: 5
+    },
+    botaoFiltro:{
+        justifyContent: "center",
+        borderTopWidth:1, 
+        borderBottomWidth:1, 
+        borderColor:'black', 
+        height:50, 
+        width:'10%', 
     }
 }
 );

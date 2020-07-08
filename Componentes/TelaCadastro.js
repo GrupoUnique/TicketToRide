@@ -55,7 +55,7 @@ export default function TelaCadastro({ navigation }) {
                     cancelBtnText={"Cancelar"}
                     showIcon={false}
                     customStyles={{
-                            dateInput: {
+                        dateInput: {
                             alignContent: "flex-start",
                             alignSelf: "flex-start",
                             alignItems: "flex-start",

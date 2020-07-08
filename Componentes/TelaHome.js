@@ -14,15 +14,46 @@ export default function TelaHome ({navigation}){
             <View style={styles.scroll}>
                 <ScrollView>
                     <Text style={styles.Textos}>Explore</Text> 
-                    <ContainerButtons width={'94%'} height={120} margin={'2%'} top={30} navigator={navigation}></ContainerButtons>
+                    <ContainerButtons 
+                        width={'94%'} 
+                        height={120} 
+                        margin={'2%'} 
+                        top={30} 
+                        navigator={navigation}>
+                    </ContainerButtons>
+                    
                     <Text style={styles.Textos}>Destaques</Text>
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
+                    <ContainerViagens 
+                        width={'94%'} 
+                        heigth={185} 
+                        margin={'3%'} 
+                        navigator={navigation}>
+                    </ContainerViagens>
+                    
                     <Text style={styles.Textos} >Promoções</Text>
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
+                    <ContainerViagens 
+                        width={'94%'} 
+                        heigth={185} 
+                        margin={'3%'} 
+                        navigator={navigation}>
+                    </ContainerViagens>
+                    
                     <Text style={styles.Textos}>Já Visitados</Text>
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
+                    <ContainerViagens 
+                        width={'94%'} 
+                        heigth={185} 
+                        margin={'3%'} 
+                        navigator={navigation}>
+                    </ContainerViagens>
+                    
                     <Text style={styles.Textos}>Mais Visitados</Text> 
-                    <ContainerViagens width={'94%'} heigth={185} margin={'3%'} navigator={navigation}></ContainerViagens>
+                    <ContainerViagens
+                        width={'94%'} 
+                        heigth={185} 
+                        margin={'3%'} 
+                        navigator={navigation}>
+                    </ContainerViagens>
+                    
                 </ScrollView>
             </View>
         )
