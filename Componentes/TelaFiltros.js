@@ -4,7 +4,7 @@ import PickerDate from './Picker.js';
 import { Switch } from 'react-native-paper';
 
 const date = new Date().getDate();
-//teste 2
+//teste 22
 export default class TelaFiltros extends Component{
     state={
         isDate:false,
