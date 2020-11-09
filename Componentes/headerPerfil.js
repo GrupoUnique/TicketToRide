@@ -8,8 +8,8 @@ export default class HeaderPerfil extends Component{
             <View style={styles.container}>
                 <Image source={require('../assets/beiçola.jpg')} style={styles.img}/>
                 <View style={styles.containerText}>
-                    <Text>Aula do melhor professor da fatec</Text>                
-                    <Text>professor.rogerio@lindo.com</Text>     
+                    <Text>Aula da melhor professora da fatec</Text>                
+                    <Text>forabozo.olavoc@lindo.com</Text>     
                 </View>
             </View>
         );
