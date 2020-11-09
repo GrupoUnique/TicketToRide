@@ -6,10 +6,10 @@ export default class HeaderPerfil extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <Image source={require('../assets/beiçola.jpg')} style={styles.img}/>
+                <Image source={require('../assets/user.png')} style={styles.img}/>
                 <View style={styles.containerText}>
-                    <Text>Aula do melhor professor da fatec</Text>                
-                    <Text>professor.rogerio@lindo.com</Text>     
+                    <Text>Aula da melhor professora da fatec</Text>                
+                    <Text>forabozo.olavo@lindo.com</Text>     
                 </View>
             </View>
         );
