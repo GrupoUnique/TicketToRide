@@ -138,7 +138,7 @@ export default class TelaFiltros extends Component{
                                 console.log(this.state.bus);
                             }
                         }>
-                        <Picker.Item label="busão" value="bus" />
+                        <Picker.Item label="Teste sublime merge" value="bus" />
                             <Picker.Item label="Onibus" value="oni" />
                             </Picker>
                             <Switch  style={{alignSelf:'center'}} value={this.state.isBusType} onValueChange={() => {this.setState({isBusType:!this.state.isBusType});} }/>
